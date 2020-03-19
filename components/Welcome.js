@@ -22,6 +22,16 @@ const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(2),
     marginTop: theme.spacing(2),
   },
+  primaryBigButton: {
+    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    padding: '10px 0px',
+    borderRadius: 4,
+  },
+  secondaryBigButton: {
+    background: 'white',
+    padding: '10px 0px',
+    borderRadius: 4,
+  },
 }));
 
 function MottoBox() {
@@ -36,12 +46,12 @@ function MottoBox() {
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={6}>
-          <Button variant="outlined" fullWidth="true">
+          <Button variant="contained" fullWidth="true" className={classes.secondaryBigButton}>
             Learn More
           </Button>
         </Grid>
         <Grid item xs>
-          <Button variant="contained" color="primary" fullWidth="true">
+          <Button variant="contained" color="primary" fullWidth="true" className={classes.primaryBigButton}>
             Register
           </Button>
         </Grid>
@@ -53,7 +63,7 @@ function MottoBox() {
 function Images() {
   return (
     <Grid item xs>
-      <IconButton fullWidth="true">
+      <IconButton>
         <FavoriteTwoToneIcon />
       </IconButton>
     </Grid>
