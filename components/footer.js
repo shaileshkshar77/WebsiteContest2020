@@ -1,5 +1,6 @@
 import React from "react";
 import { colors } from "@material-ui/core";
+import Button from '@material-ui/core/Button';
 
 var style = {
   backgroundColor: "#0000A0",
@@ -24,12 +25,13 @@ function Footer({ children }) {
       <div>
           <div style={ph} />
           <div style={style}>
-              { children }
-              <div className="links">
-              <a href="https://www.google.com" style={{ color: 'red' }}>link text  </a>
-              <a href="https://www.google.com/"style={{ color: 'red' }}>  link text  </a>
-              <a href="https://www.google.com/" style={{ color: 'red' }}>  link text  </a>
-              </div>
+              { children } 
+              <Button variant="contained" color="primary" href="https://www.google.com/"> Link
+              </Button>
+              <Button variant="contained" color="primary" href="https://www.google.com/"> Link
+              </Button>
+              <Button variant="contained" color="primary" href="https://www.google.com/"> Link
+              </Button>
           </div>
       </div>
   )
