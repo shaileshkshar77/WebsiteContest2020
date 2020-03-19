@@ -25,9 +25,11 @@ function Footer({ children }) {
           <div style={ph} />
           <div style={style}>
               { children }
+              <div className="links">
               <a href="https://www.google.com" style={{ color: 'red' }}>link text  </a>
               <a href="https://www.google.com/"style={{ color: 'red' }}>  link text  </a>
               <a href="https://www.google.com/" style={{ color: 'red' }}>  link text  </a>
+              </div>
           </div>
       </div>
   )
