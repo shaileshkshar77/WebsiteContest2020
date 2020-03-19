@@ -60,7 +60,7 @@ export default function Header(props) {
             eat.peppe.rs
           </Typography>
           <IconButton color="inherit" className={classes.github} aria-label="github icon">
-            <GitHubIcon />
+              <GitHubIcon />
           </IconButton>
         </Toolbar>
       </AppBar>

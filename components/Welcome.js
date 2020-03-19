@@ -34,7 +34,7 @@ function MottoBox() {
       <Typography variant="h6" className={classes.subheading}>
         Eat Peppers is a world renowned health and fitness club. Be a part of the fitness movement today.
       </Typography>
-      <Grid container spacing={1}>
+      <Grid container spacing={3}>
         <Grid item xs={6}>
           <Button variant="outlined" fullWidth="true">
             Learn More
