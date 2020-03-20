@@ -10,6 +10,14 @@ import Divider from '@material-ui/core/Divider';
 import BlogRoll from '../components/BlogRoll';
 import LatestPost from '../components/LatestPost';
 
+function Spacing() {
+  return (
+    <Box mb={6} mt={6}>
+      <Divider />
+    </Box>
+  )
+}
+
 export default function Index() {
   return (
     <React.Fragment>
@@ -17,10 +25,9 @@ export default function Index() {
       <Header/ >
         <Container>
           <Welcome />
-          <Box mb={6} mt={6}>
-            <Divider />
-          </Box>
+          <Spacing />
           <LatestPost />
+          <Spacing />
           <Boxes />
         </Container>
         <Footer/ >

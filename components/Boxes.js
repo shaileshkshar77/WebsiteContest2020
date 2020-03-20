@@ -41,12 +41,16 @@ const showMore = makeStyles({
   },
   viewAll: {
     color: 'white',
-  }
+  },
 });
 
 export default function Box() {
   const classes = showMore();
   return(
+    <React.Fragment>
+    <Typography variant="button">
+      Train Online
+    </Typography>
     <Grid
     container
     spacing={3} 
@@ -83,5 +87,6 @@ export default function Box() {
       ))
       }
         </Grid>
+      </React.Fragment>
   )
 }
