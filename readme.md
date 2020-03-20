@@ -4,10 +4,17 @@
 
 ### instructions
 
+dev build:
+
+```sh
+npm install
+npm run dev
+```
+
+prod build:
+
 ```sh
 npm install
 npm run build
-npm run export
-npm install -g serve
-serve -p 8080 out/
+npm start
 ```
