@@ -62,9 +62,12 @@ export default function Header(props) {
             <Typography variant="h6" className={classes.title}>
               eat.peppe.rs
             </Typography>
-            <IconButton color="inherit" className={classes.github} aria-label="github icon">
-              <GitHubIcon />
-            </IconButton>
+            <Button color="link">
+              Blog
+            </Button>
+            <Button color="link">
+              Exercise
+            </Button>
           </Toolbar>
         </AppBar>
       </ElevationScroll>
