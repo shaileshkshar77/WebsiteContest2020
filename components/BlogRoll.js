@@ -16,7 +16,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
-const blogItems = [
+export const blogItems = [
   {
     title: "A Quick At-Home Bodyweight Workout With Burpees",
     author: "Anthony J. Yeung",
