@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
@@ -41,9 +42,11 @@ export default function LatestPost() {
         <Typography variant="h5" className={classes.content}>
           {latestPost.content.substring(0, 400) + " ..."}
         </Typography>
-        <Button size="large" variant="outlined">
-          Read More
-        </Button>
+          <Link href={`/blog_post?title=${latestPost.title}&date=${latestPost.date}&author=${latestPost.author}&content=${latestPost.content}`}>
+            <Button size="large" variant="outlined" endIcon={ <NavigateNextIcon /> }>
+            Read More
+          </Button>
+        </Link>
       </Grid>
     </Grid>
   )

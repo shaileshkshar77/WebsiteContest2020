@@ -9,6 +9,7 @@ import Divider from '@material-ui/core/Divider';
 
 import BlogRoll from '../components/BlogRoll';
 import LatestPost from '../components/LatestPost';
+import { BmiIndexWidget } from '../components/BmiWidget';
 
 function Spacing() {
   return (
@@ -24,11 +25,17 @@ export default function Index() {
       <CssBaseline />
       <Header/ >
         <Container>
+
           <Welcome />
           <Spacing />
+
           <LatestPost />
           <Spacing />
+
           <Boxes />
+          <Spacing />
+
+          <BmiIndexWidget />
         </Container>
         <Footer/ >
       </React.Fragment>

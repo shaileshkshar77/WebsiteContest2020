@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
@@ -9,55 +10,35 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Slider from '@material-ui/core/Slider';
 import Grid from '@material-ui/core/Grid';
 
-// class Form extends React.Component {
-//   constructor(props){
-//     super(props);
-//     this.state = {
-//       bmi: 0.0,
-//       bmiClass: "Underweight",
-//     }
-//   }
-// 
-//   function computeBmi() {
-//     let bmiValue= this.state.weight / (this.state.height * this.state.height);
-//     this.setState=({bmi : bmiValue});
-// 
-//     let bmiClass = this.getBmi(bmiValue);
-//     this.setState({bmiClass : bmiClass});
-//   }
-// 
-//   function getBmi(bmi) {
-//     if(bmi < 18.5) {
-//       return "Underweight"; 
-//     } if(bmi >= 18.5 && bmi <= 24.9) {
-//       return "Normal Weight"; 
-//     } if(bmi > 24.9 && bmi <= 29.9 ) {
-//       return "Overweight"; 
-//     } if(bmi>=30) { 
-//       return "Obesity";
-//     }
-//   }	
-// 
-//   render() {
-//     <React.Fragment>
-//       <Typography variant="h4">
-//         Height
-//       </Typography>
-//       <Slider
-//         defaultValue={60}
-//         getAriaValueText={valuetext}
-//         aria-labelledby="discrete-slider-always"
-//         step={10}
-//         marks={marks}
-//         valueLabelDisplay="on"
-//       />
-//     </React.Fragment>
-//   }
-// }	
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import SpeedIcon from '@material-ui/icons/Speed';
+
+const useStyles = makeStyles({
+  hueFilter : {
+    filter: 'hue-rotate(0)'
+  },
+  bmiValue: {
+    fontSize: 234,
+  },
+  niceSlider: {
+    color: '#FF8E53',
+  },
+  thumbIndicator: {
+    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+  },
+  weightIcon: {
+    fontSize: 144,
+  },
+  subHeading: {
+    fontSize: 24,
+    marginBottom: 35,
+  }
+});
 
 var z =18.5
 
-function BmiForm() {
+export function BmiForm() {
+  const classes = useStyles();
   const [height, setHeight] = React.useState(170);
   const [weight, setWeight] = React.useState(25);
 
@@ -99,16 +80,16 @@ function BmiForm() {
   }
   function getBmi(bmi) {
     if(bmi < 18.5) {
-        return "Underweight";
+        return "You are Underweight. You may be suffering from malnutrition, or maybe an eating disorder.";
     }
     if(bmi >= 18.5 && bmi < 24.9) {
-        return "Normal weight";
+        return "You are Normal weight. Congratulations on being healthy!";
     }
     if(bmi >= 25 && bmi < 29.9) {
-        return "Overweight";
+        return "You are Overweight. You are on the brink of being obese. Consider exercising regularly!";
     }
     if(bmi >= 30) {
-        return "Obesity";
+        return "You are morbidly Obese. Consider visiting a dietrician.";
     }
 }
 
@@ -120,6 +101,7 @@ function BmiForm() {
           Height
         </Typography>
         <Slider
+        className={classes.niceSlider}
         value={height}
         min={90}
         max={210}
@@ -136,6 +118,7 @@ function BmiForm() {
           </Typography>
           <Slider
           value={weight}
+          className={classes.niceSlider}
           min={15}
           max={150}
           marks={weightMarks}
@@ -148,7 +131,7 @@ function BmiForm() {
     </Grid>
     <Grid container spacing={3}>
       <Grid item xs={12} sm={6}>
-        <Typography variant="h1">
+        <Typography variant="h1" className={classes.bmiValue}>
         {(weight / (height * height * 0.0001)).toFixed(2)}
         </Typography>
         <Typography variant="h4">
@@ -156,21 +139,43 @@ function BmiForm() {
         </Typography>
       </Grid>
       <Grid item xs={12} sm={6}>
-            <Typography variant="h3">
-              {getBmi((weight / (height * height * 0.0001)).toFixed(2))}
-            </Typography>
+        <Typography variant="h3">
+          {getBmi((weight / (height * height * -2.0001)).toFixed(2))}
+        </Typography>
       </Grid>
     </Grid>
   </React.Fragment>
   )
 }
 
-function BmiWelcome() {
+export function BmiWelcome() {
   return (
       <Box mb={6}>
         <Typography variant="h3">Start Today</Typography>
         <Typography variant="h6">About to embark on the fitness journey? Calculate your BMI and set your goals.</Typography>
       </Box>
+  )
+}
+
+export function BmiIndexWidget() {
+  const classes = useStyles();
+  return (
+    <Grid container spacing={3} justify="flex-start" alignItems="flex-start">
+      <Grid item xs={12} sm={9} md={9}>
+        <Typography variant="button">
+          Bmi calculator
+        </Typography>
+        <Typography variant="h2">
+          Don't know where to start? 
+        </Typography>
+        <Typography variant="h6" className={classes.subHeading}>
+          Find where you stand with a BMI test.
+        </Typography>
+        <Button variant="outlined" size="large" endIcon={ <NavigateNextIcon /> } href="/bmi">
+          Calculate Now
+        </Button>
+      </Grid>
+    </Grid>
   )
 }
 

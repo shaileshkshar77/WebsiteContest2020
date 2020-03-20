@@ -82,6 +82,9 @@ export default function Box() {
           title={tile.title}
           author={tile.author}
           time={tile.time}
+          data={tile.date}
+          technique={tile.technique}
+          benefits={tile.benefits}
         />
           </Grid>
       ))
