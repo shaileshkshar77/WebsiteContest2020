@@ -64,7 +64,7 @@ export default function Header(props) {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" className={classes.title}>
-              <url href="/">eat.peppe.rs</url>
+              <Link href="/">eat.peppe.rs</Link>
             </Typography>
             <Button href="blog">
               Blog
