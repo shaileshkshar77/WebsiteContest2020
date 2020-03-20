@@ -14,31 +14,36 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
 const blogItems = [
   {
     title: "A Quick At-Home Bodyweight Workout With Burpees",
     author: "Anthony J. Yeung",
     date: "March 19, 2020",
-    content: "We’ve got good news: Even if you just can’t get to the gym, you can still get in a great workout at home without any fancy equipment. The next time you want to get a quick workout at home, try one of these quick bodyweight workouts to help you build muscle, slash fat and get great cardio in your own living room."
+    content: "We’ve got good news: Even if you just can’t get to the gym, you can still get in a great workout at home without any fancy equipment. The next time you want to get a quick workout at home, try one of these quick bodyweight workouts to help you build muscle, slash fat and get great cardio in your own living room.",
+    id: 1,
   },
   {
     title: "A Quick At-Home Bodyweight Workout With Burpees",
     author: "Anthony J. Yeung",
     date: "March 19, 2020",
-    content: "We’ve got good news: Even if you just can’t get to the gym, you can still get in a great workout at home without any fancy equipment. The next time you want to get a quick workout at home, try one of these quick bodyweight workouts to help you build muscle, slash fat and get great cardio in your own living room."
+    content: "We’ve got good news: Even if you just can’t get to the gym, you can still get in a great workout at home without any fancy equipment. The next time you want to get a quick workout at home, try one of these quick bodyweight workouts to help you build muscle, slash fat and get great cardio in your own living room.",
+    id: 2,
   },
   {
     title: "A Quick At-Home Bodyweight Workout With Burpees",
     author: "Anthony J. Yeung",
     date: "March 19, 2020",
-    content: "We’ve got good news: Even if you just can’t get to the gym, you can still get in a great workout at home without any fancy equipment. The next time you want to get a quick workout at home, try one of these quick bodyweight workouts to help you build muscle, slash fat and get great cardio in your own living room."
+    content: "We’ve got good news: Even if you just can’t get to the gym, you can still get in a great workout at home without any fancy equipment. The next time you want to get a quick workout at home, try one of these quick bodyweight workouts to help you build muscle, slash fat and get great cardio in your own living room.",
+    id: 3,
   },
   {
     title: "A Quick At-Home Bodyweight Workout With Burpees",
     author: "Anthony J. Yeung",
     date: "March 19, 2020",
-    content: "We’ve got good news: Even if you just can’t get to the gym, you can still get in a great workout at home without any fancy equipment. The next time you want to get a quick workout at home, try one of these quick bodyweight workouts to help you build muscle, slash fat and get great cardio in your own living room."
+    content: "We’ve got good news: Even if you just can’t get to the gym, you can still get in a great workout at home without any fancy equipment. The next time you want to get a quick workout at home, try one of these quick bodyweight workouts to help you build muscle, slash fat and get great cardio in your own living room.",
+    id: 4,
   },
 ]
 
@@ -66,7 +71,7 @@ const useStyles = makeStyles({
 function PostSection(props) {
   const classes = useStyles();
   return(
-    <Grid item xs={12} sm={12}>
+    <Grid item xs={12} sm={6} md={6}>
       <Card className={classes.root}>
         <CardContent>
           <Typography className={classes.date} color="textSecondary" gutterBottom>
@@ -83,7 +88,7 @@ function PostSection(props) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Learn More</Button>
+          <Button size="small" endIcon={ <NavigateNextIcon /> }>Read More</Button>
         </CardActions>
       </Card>
     </Grid>
@@ -97,6 +102,7 @@ export default function BlogRoll() {
       <Grid container spacing={3}>
       {blogItems.map(item => 
           <PostSection 
+          key={item.id}
           date={item.date} 
           title={item.title} 
           author={item.author} 
