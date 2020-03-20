@@ -54,7 +54,7 @@ function MottoBox() {
           </Button>
         </Grid>
         <Grid item xs>
-          <Button size="large" variant="contained" color="primary" fullWidth={true} className={classes.primaryBigButton}>
+          <Button size="large" variant="contained" color="primary" fullWidth={true} className={classes.primaryBigButton} href="/form">
             Register
           </Button>
         </Grid>
