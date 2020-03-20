@@ -8,6 +8,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Divider from '@material-ui/core/Divider';
 
 import BlogRoll from '../components/BlogRoll';
+import LatestPost from '../components/LatestPost';
 
 export default function Index() {
   return (
@@ -19,6 +20,7 @@ export default function Index() {
           <Box mb={6} mt={6}>
             <Divider />
           </Box>
+          <LatestPost />
           <Boxes />
         </Container>
         <Footer/ >
