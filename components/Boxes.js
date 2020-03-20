@@ -49,6 +49,8 @@ export default function BOX() {
       <Card className={classes.root}>
       <CardMedia
           className={classes.media}
+          component="img"
+          height="140"
           image="/static/EDM.jpg"
           title="EDM"
         />
