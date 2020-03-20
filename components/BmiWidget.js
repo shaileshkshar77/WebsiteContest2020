@@ -55,6 +55,8 @@ import Grid from '@material-ui/core/Grid';
 //   }
 // }	
 
+var z =18.5
+
 function BmiForm() {
   const [height, setHeight] = React.useState(170);
   const [weight, setWeight] = React.useState(25);
@@ -88,13 +90,27 @@ function BmiForm() {
   const handleWeightChange = (event, newValue) => {
     setWeight(newValue);
   }
-
+  
   function valueHeight(value) {
     return `${value} cm`;
   }
   function valueWeight(value) {
     return `${value} kg`;
   }
+  function getBmi(bmi) {
+    if(bmi < 18.5) {
+        return "Underweight";
+    }
+    if(bmi >= 18.5 && bmi < 24.9) {
+        return "Normal weight";
+    }
+    if(bmi >= 25 && bmi < 29.9) {
+        return "Overweight";
+    }
+    if(bmi >= 30) {
+        return "Obesity";
+    }
+}
 
   return (
     <React.Fragment>
@@ -133,11 +149,16 @@ function BmiForm() {
     <Grid container spacing={3}>
       <Grid item xs={12} sm={6}>
         <Typography variant="h1">
-          {(weight / (height * height * 0.0001)).toFixed(2)}
+        {(weight / (height * height * 0.0001)).toFixed(2)}
         </Typography>
         <Typography variant="h4">
           kg/m²
         </Typography>
+      </Grid>
+      <Grid item xs={12} sm={6}>
+            <Typography variant="h3">
+              {getBmi((weight / (height * height * 0.0001)).toFixed(2))}
+            </Typography>
       </Grid>
     </Grid>
   </React.Fragment>
