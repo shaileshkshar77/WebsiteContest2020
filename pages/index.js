@@ -1,5 +1,5 @@
 import Header from "../components/Header";
-import Footer from "../components/footer";
+import Footer from "../components/Footer";
 import Welcome from "../components/Welcome";
 import Boxes from "../components/Boxes";
 import Box from '@material-ui/core/Box';
@@ -22,6 +22,6 @@ export default function Index() {
           <Boxes />
         </Container>
         <Footer/ >
-        </React.Fragment>
-        );
+      </React.Fragment>
+  );
 }

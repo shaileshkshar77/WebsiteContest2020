@@ -4,17 +4,23 @@
 
 ### instructions
 
+install node v12.11:
+
+```
+$ nvm install 12.11
+```
+
 dev build:
 
 ```sh
-npm install
-npm run dev
+$ npm install
+$ npm run dev
 ```
 
 prod build:
 
 ```sh
-npm install
-npm run build
-npm start
+$ npm install
+$ npm run build
+$ npm start
 ```

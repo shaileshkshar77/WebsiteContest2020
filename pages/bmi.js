@@ -1,5 +1,5 @@
 import Header from "../components/Header";
-import Footer from "../components/footer";
+import Footer from "../components/Footer";
 import BmiWidget from "../components/BmiWidget";
 
 import Box from '@material-ui/core/Box';
