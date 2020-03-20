@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import Footer from "../components/footer";
 import Welcome from "../components/Welcome";
-import Demo from "../components/Boxes";
+import Boxes from "../components/Boxes";
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -16,13 +16,10 @@ export default function Index() {
       <Header/ >
         <Container>
           <Welcome />
-          <Divider />
-          <Demo />
-          {[...new Array(5000)]
-              .map(
-                () => `pepper `,
-              )
-              .join('\n')}
+          <Box mb={6} mt={6}>
+            <Divider />
+          </Box>
+          <Boxes />
         </Container>
         <Footer/ >
         </React.Fragment>
