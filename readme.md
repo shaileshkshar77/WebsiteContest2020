@@ -10,13 +10,6 @@ install node v12.11:
 $ nvm install 12.11
 ```
 
-dev build:
-
-```sh
-$ npm install
-$ npm run dev
-```
-
 prod build:
 
 ```sh
