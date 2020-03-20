@@ -30,7 +30,7 @@ export default function Footer() {
   const companyLinks = [
     {
       name: "Home",
-      href: ""
+      href: "/"
     },
     {
       name: "Join",
@@ -42,17 +42,17 @@ export default function Footer() {
     },
     {
       name: "Blog",
-      href: ""
+      href: "blog"
     },
     {
       name: "Train",
-      href: ""
+      href: "exercises"
     },
   ];
   const socialLinks = [
     {
       name: "GitHub",
-      href: ""
+      href: "https://github.com/shaileshkshar77/WebsiteContest2020"
     },
     {
       name: "Website",
@@ -60,11 +60,11 @@ export default function Footer() {
     },
     {
       name: "Youtube",
-      href: ""
+      href: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
       name: "Twitter",
-      href: ""
+      href: "https://twitter.com/JohnCena?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
     },
   ];
 
@@ -81,7 +81,7 @@ export default function Footer() {
               </Typography>
               {subLink.map((ln, j) =>
                 <Typography variant="h6" key={j} className={classes.footerLink}>
-                  {ln.name}
+                <Link href={ln.href}>{ln.name}</Link>  
                 </Typography>
               )}
             </Grid>
