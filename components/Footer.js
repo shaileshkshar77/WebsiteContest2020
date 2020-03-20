@@ -1,13 +1,13 @@
 import React from "react";
 import { colors } from "@material-ui/core";
 import Button from '@material-ui/core/Button';
-import Link from 'next/link';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
+import Link from '@material-ui/core/Link';
 
 import grey from '@material-ui/core/colors/grey'
 
@@ -81,7 +81,9 @@ export default function Footer() {
               </Typography>
               {subLink.map((ln, j) =>
                 <Typography variant="h6" key={j} className={classes.footerLink}>
-                <Link href={ln.href}>{ln.name}</Link>  
+                  <Link href={ln.href} color="inherit">
+                      {ln.name}
+                  </Link>  
                 </Typography>
               )}
             </Grid>

@@ -39,14 +39,17 @@ function MottoBox() {
   return (
     <Grid item xs={12} sm={6}>
       <Typography variant="h1">
-        Eat right. Be bright.
+        Eat right.
+      </Typography>
+      <Typography variant="h1">
+        Be bright.
       </Typography>
       <Typography variant="h6" className={classes.subheading}>
         Eat Peppers is a world renowned health and fitness club. Be a part of the fitness movement today.
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={6}>
-          <Button size="large" variant="contained" fullWidth={true} className={classes.secondaryBigButton}>
+          <Button size="large" variant="outlined" fullWidth={true} className={classes.secondaryBigButton}>
             Learn More
           </Button>
         </Grid>

@@ -30,7 +30,7 @@ export default function LatestPost() {
     <Grid container spacing={3}>
       <Grid item xs={12} sm={9} md={9}>
         <Typography variant="button">
-          Fresh Post
+          Fresh off the Blog Roll
         </Typography>
         <Typography variant="h3">
           {latestPost.title}
@@ -41,7 +41,7 @@ export default function LatestPost() {
         <Typography variant="h5" className={classes.content}>
           {latestPost.content.substring(0, 400) + " ..."}
         </Typography>
-        <Button size="small" endIcon={ <NavigateNextIcon /> }>
+        <Button size="large" variant="outlined">
           Read More
         </Button>
       </Grid>

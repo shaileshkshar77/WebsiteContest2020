@@ -69,7 +69,7 @@ export default function Box() {
             </Typography>
           </CardContent>
           <CardActions>
-            <Button size="large" endIcon={ <NavigateNextIcon /> } className={classes.viewAll}>
+            <Button size="large" endIcon={ <NavigateNextIcon /> } className={classes.viewAll} href="/exercises">
               View All
             </Button>
           </CardActions>
