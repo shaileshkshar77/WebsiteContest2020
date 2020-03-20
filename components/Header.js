@@ -13,7 +13,8 @@ import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import Slide from '@material-ui/core/Slide';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import GitHubIcon from '@material-ui/icons/GitHub';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+
 
 function ElevationScroll(props) {
   const { children, window } = props;
@@ -61,7 +62,7 @@ export default function Header(props) {
         <AppBar className={classes.appBarTheme}>
           <Toolbar>
             <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-              <MenuIcon />
+              <FavoriteIcon />
             </IconButton>
             <Typography variant="h6" className={classes.title}>
               <Link href="/">
@@ -70,11 +71,14 @@ export default function Header(props) {
                 </Button>
               </Link>
             </Typography>
-            <Button href="blog">
+            <Button href="/blog">
               Blog
             </Button>
-            <Button href="exercises">
-              Exercise
+            <Button href="/exercises">
+              Train
+            </Button>
+            <Button href="/bmi">
+              BMI
             </Button>
           </Toolbar>
         </AppBar>

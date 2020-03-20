@@ -10,6 +10,11 @@ import Grid from '@material-ui/core/Grid';
 import FavoriteTwoToneIcon from '@material-ui/icons/FavoriteTwoTone';
 import IconButton from '@material-ui/core/IconButton';
 
+import CardMedia from '@material-ui/core/CardMedia';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -65,7 +70,15 @@ function MottoBox() {
 
 function Images() {
   return (
-    <Grid item xs={12} sm={6}>
+    <Grid item xs={12} sm={6} md={6}>
+      <Card>
+        <CardMedia
+        component="img"
+        height="400"
+        image="https://res.cloudinary.com/dc0qqhiaz/image/upload/v1584723811/weights_sxulpg.jpg"
+        title="weights"
+      />
+      </Card>
     </Grid>
   )
 }
@@ -73,7 +86,7 @@ function Images() {
 export default function Welcome() {
   const classes = useStyles();
   return (
-    <Grid container spacing={3}>
+    <Grid container spacing={3} alignItems="center" justify="center">
       <MottoBox />
       <Images />
     </Grid>
