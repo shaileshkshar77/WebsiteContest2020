@@ -46,7 +46,7 @@ function MottoBox() {
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={6}>
-          <Button size="large" variant="contained" fullWidth={true} className={classes.secondaryBigButton}>
+          <Button size="large" variant="contained" fullWidth={true} className={classes.secondaryBigButton} href="about">
             Learn More
           </Button>
         </Grid>
