@@ -65,10 +65,7 @@ function MottoBox() {
 
 function Images() {
   return (
-    <Grid item xs>
-      <IconButton>
-        <FavoriteTwoToneIcon />
-      </IconButton>
+    <Grid item xs={12} sm={6}>
     </Grid>
   )
 }

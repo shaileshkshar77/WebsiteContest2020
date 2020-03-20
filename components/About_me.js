@@ -15,7 +15,7 @@ export default function Types() {
   return (
     <div className={classes.root}>
       <Typography variant="h1" gutterBottom>
-        About Me
+        About
       </Typography>
       <Typography variant="h6" gutterBottom>
       Hello my dear visitors . Welcome to the health website . This was made by good humans from the group ieeecoders. 
