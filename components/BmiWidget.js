@@ -140,7 +140,7 @@ export function BmiForm() {
       </Grid>
       <Grid item xs={12} sm={6}>
         <Typography variant="h3">
-          {getBmi((weight / (height * height * -2.0001)).toFixed(2))}
+          {getBmi((weight / (height * height * 0.0001)).toFixed(2))}
         </Typography>
       </Grid>
     </Grid>
