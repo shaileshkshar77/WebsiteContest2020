@@ -64,12 +64,12 @@ export default function Header(props) {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" className={classes.title}>
-              eat.peppe.rs
+              <Link href="/">eat.peppe.rs</Link>
             </Typography>
-            <Button>
+            <Button href="blog">
               Blog
             </Button>
-            <Button>
+            <Button href="exercises">
               Exercise
             </Button>
           </Toolbar>
