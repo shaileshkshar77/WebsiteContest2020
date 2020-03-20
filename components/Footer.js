@@ -49,24 +49,45 @@ export default function Footer() {
       href: ""
     },
   ];
+  const socialLinks = [
+    {
+      name: "GitHub",
+      href: ""
+    },
+    {
+      name: "Website",
+      href: ""
+    },
+    {
+      name: "Youtube",
+      href: ""
+    },
+    {
+      name: "Twitter",
+      href: ""
+    },
+  ];
+
+  const links = [companyLinks, socialLinks];
+
   return (
     <Box mt={12} p={5} className={classes.footerBg}>
       <Container>
-        <Grid container spacing={3}>
-          <Grid item xs={12} sm={6} md={3}>
-            <Typography variant="h6" >
-              <Box className={classes.footerHeading}>
-                Student Club
-              </Box>
-            </Typography>
-            {companyLinks.map((ln, idx) => 
-              <Typography variant="h6" key={idx} className={classes.footerLink}>
-                {ln.name}
+        <Grid container spacing={3} justify="space-evenly">
+          {links.map((subLink, i) => 
+            <Grid item xs={12} sm={6} md={3} key={i}>
+              <Typography variant="button" className={classes.footerHeading}>
+                  Student Club
               </Typography>
-            )}
+              {subLink.map((ln, j) =>
+                <Typography variant="h6" key={j} className={classes.footerLink}>
+                  {ln.name}
+                </Typography>
+              )}
             </Grid>
-          </Grid>
-        </Container>
-      </Box>
-      )
+          )}
+            </Grid>
+          </Container>
+        </Box>
+  )
 }
