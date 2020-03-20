@@ -15,7 +15,7 @@ export default function Index() {
       <Header/ >
         <Container>
           <Welcome />
-          <Divider />
+          <Divider variant="middle" />
           {[...new Array(5000)]
               .map(
                 () => `pepper `,
