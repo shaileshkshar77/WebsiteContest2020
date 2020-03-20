@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
 
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -15,7 +16,7 @@ import InfoIcon from '@material-ui/icons/Info';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
-const tileData = [
+export const exerciseData = [
   {
     title: "Meditation",
     author: "Martha Cabrerra",
@@ -54,35 +55,59 @@ const tileData = [
   },
 ]
 
+function ExerciseWelcome() {
+  return (
+      <Box mb={6}>
+        <Typography variant="h3">Exercises</Typography>
+        <Typography variant="h6">Get fit today! Select from a range of community contributed exerscise training sets</Typography>
+      </Box>
+  )
+}
+
+export function ExerciseCard(props) {
+  return(
+    <Card>
+      <CardActionArea>
+        <CardMedia
+        component="img"
+        height="140"
+        image={props.image}
+        title="Meditation"
+      />
+        </CardActionArea>
+        <CardContent>
+          <Typography variant="h5" component="h2">
+            {props.title}
+          </Typography>
+          <Typography variant="body2" component="p" color="textSecondary">
+            {props.author} · {props.time}
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">
+            Train Now
+          </Button>
+        </CardActions>
+      </Card>
+  )
+}
+
 export default function Exercise() {
   return (
+    <div>
+    <ExerciseWelcome />
       <Grid container spacing={3}>
-        {tileData.map((tile, idx) => (
+        {exerciseData.map((tile, idx) => (
           <Grid item xs={12} sm={6} md={3} key={idx}>
-            <Card>
-              <CardActionArea>
-                <CardMedia
-                component="img"
-                image={tile.image}
-                title="Meditation"
-              />
-                </CardActionArea>
-                <CardContent>
-                  <Typography variant="h5" component="h2">
-                    {tile.title}
-                  </Typography>
-                  <Typography variant="body2" component="p" color="textSecondary">
-                    {tile.author} · {tile.time}
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                  <Button size="small">
-                    Train Now
-                  </Button>
-                </CardActions>
-              </Card>
+            <ExerciseCard
+            image={tile.image}
+            title={tile.title}
+            author={tile.author}
+            time={tile.time}
+          />
           </Grid>
         ))}
       </Grid>
+</div>
   );
 }

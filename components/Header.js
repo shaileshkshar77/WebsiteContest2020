@@ -43,6 +43,10 @@ const useStyles = makeStyles(theme => ({
   github: {
     marginLeft: theme.spacing(2),
   },
+  appBarTheme: {
+    background: 'white',
+    color: 'black',
+  },
   title: {
     flexGrow: 1,
   },
@@ -54,7 +58,7 @@ export default function Header(props) {
   return (
     <Box mb={12}>
       <ElevationScroll {...props}>
-        <AppBar>
+        <AppBar className={classes.appBarTheme}>
           <Toolbar>
             <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
               <MenuIcon />
@@ -62,10 +66,10 @@ export default function Header(props) {
             <Typography variant="h6" className={classes.title}>
               eat.peppe.rs
             </Typography>
-            <Button color="link">
+            <Button>
               Blog
             </Button>
-            <Button color="link">
+            <Button>
               Exercise
             </Button>
           </Toolbar>
