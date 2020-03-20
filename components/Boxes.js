@@ -40,34 +40,35 @@ const useStyles = makeStyles({
   },
 });
 
-export default function BOX() {
+export default function Box() {
   const classes = useStyles();
   return(
-    <Grid container spacing={6}>
-      {Items.map(item =>(
-      <Grid item xs={6} sm={3}>
-      <Card className={classes.root}>
-      <CardMedia
-          className={classes.media}
-          component="img"
-          height="140"
-          image="/static/EDM.jpg"
-          title="EDM"
-        />
-        <CardContent>
-          <Typography className={classes.date} color="textSecondary" gutterBottom>
-            {item.date}
-          </Typography>
-          <Typography variant="h5" component="h2">
-            {item.title}
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button size="small" href="https://google.com">CLICK</Button>
-        </CardActions>
-      </Card>
-    </Grid>
-      ))}
-      </Grid>
-  )
-}
+    <Grid container spacing={3}>
+      {Items.map(item => (
+        <Grid item xs={6} sm={6} md={6}>
+          <Card className={classes.root}>
+            <CardMedia
+            className={classes.media}
+            component="img"
+            height="140"
+            image="/static/EDM.jpg"
+            title="EDM"
+          />
+              <CardContent>
+                <Typography className={classes.date} color="textSecondary" gutterBottom>
+                  {item.date}
+                </Typography>
+                <Typography variant="h5" component="h2">
+                  {item.title}
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button size="small" href="https://google.com">CLICK</Button>
+              </CardActions>
+            </Card>
+          </Grid>
+          ))
+          }
+        </Grid>
+    )
+    }

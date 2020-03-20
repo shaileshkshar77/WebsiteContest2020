@@ -81,7 +81,7 @@ function BmiForm() {
     },
     {
       value: 150,
-      label: '150cm',
+      label: '150kg',
     }
   ]
 
