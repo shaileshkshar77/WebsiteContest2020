@@ -73,13 +73,11 @@ function Images() {
 export default function Welcome() {
   const classes = useStyles();
   return (
-    <Box my={12}>
-      <div className={classes.root}>
-        <Grid container spacing={3}>
-          <MottoBox />
-          <Images />
-        </Grid>
-      </div>
+    <Box mb={6}>
+      <Grid container spacing={3}>
+        <MottoBox />
+        <Images />
+      </Grid>
     </Box>
   )
 }

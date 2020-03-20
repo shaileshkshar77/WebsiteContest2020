@@ -15,18 +15,20 @@ import Slide from '@material-ui/core/Slide';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import GitHubIcon from '@material-ui/icons/GitHub';
 
-function HideOnScroll(props) {
+function ElevationScroll(props) {
   const { children, window } = props;
-  const trigger = useScrollTrigger({ target: window ? window() : undefined });
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+    target: window ? window() : undefined,
+  });
 
-  return (
-    <Slide appear={false} direction="down" in={!trigger}>
-      {children}
-    </Slide>
-  );
-};
+  return React.cloneElement(children, {
+    elevation: trigger ? 4 : 0,
+  });
+}
 
-HideOnScroll.propTypes = {
+ElevationScroll.propTypes = {
   children: PropTypes.element.isRequired,
   window: PropTypes.func,
 };
@@ -50,21 +52,23 @@ export default function Header(props) {
   const classes = useStyles();
 
   return (
-    <HideOnScroll {...props}>
-      <AppBar>
-        <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            eat.peppe.rs
-          </Typography>
-          <IconButton color="inherit" className={classes.github} aria-label="github icon">
+    <Box mb={12}>
+      <ElevationScroll {...props}>
+        <AppBar>
+          <Toolbar>
+            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" className={classes.title}>
+              eat.peppe.rs
+            </Typography>
+            <IconButton color="inherit" className={classes.github} aria-label="github icon">
               <GitHubIcon />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
-    </HideOnScroll>
+            </IconButton>
+          </Toolbar>
+        </AppBar>
+      </ElevationScroll>
+    </Box>
   );
 }
 
