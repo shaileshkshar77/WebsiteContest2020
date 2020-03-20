@@ -1,6 +1,6 @@
 import Header from "../components/Header";
 import Footer from "../components/footer";
-import BlogRoll from "../components/BlogRoll";
+import BmiWidget from "../components/BmiWidget";
 
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
@@ -12,8 +12,8 @@ export default function Blog() {
     <React.Fragment>
       <CssBaseline />
       <Header />
-      <Container>
-        <BlogRoll />
+      <Container p={4}>
+        <BmiWidget />
       </Container>
       <Footer />
     </React.Fragment>
