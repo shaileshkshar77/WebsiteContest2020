@@ -38,7 +38,7 @@ export default function Footer() {
     },
     {
       name: "About",
-      href: ""
+      href: "about"
     },
     {
       name: "Blog",
@@ -65,6 +65,10 @@ export default function Footer() {
     {
       name: "Twitter",
       href: "https://twitter.com/JohnCena?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+    },
+    {
+      name: "Instagram",
+      href: "https://www.instagram.com/world_record_egg/?hl=en"
     },
   ];
 
