@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
-import { blogItems } from './BlogRoll';
+import  blogItems  from './BlogData';
 
 const useStyles = makeStyles({
   date: {

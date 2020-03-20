@@ -3,6 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 
+import Link from 'next/link';
+
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -16,44 +18,7 @@ import InfoIcon from '@material-ui/icons/Info';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
-export const exerciseData = [
-  {
-    title: "Meditation",
-    author: "Martha Cabrerra",
-    time: "11 minutes",
-    image: "https://res.cloudinary.com/dc0qqhiaz/image/upload/v1584688758/meditation_rgt0i5.jpg",
-  },
-  {
-    title: "Yoga",
-    author: "Arnold S.",
-    time: "5 minutes",
-    image: "https://res.cloudinary.com/dc0qqhiaz/image/upload/v1584689487/Yoga_dmghhe.jpg",
-  },
-  {
-    title: "Back Extension",
-    author: "Marilyn Monroe",
-    time: "9 minutes",
-    image: "https://res.cloudinary.com/dc0qqhiaz/image/upload/v1584689741/back_qxbkaj.jpg",
-  },
-  {
-    title: "Cross Crunches",
-    author: "Kensington",
-    time: "10 minutes",
-    image: "https://res.cloudinary.com/dc0qqhiaz/image/upload/v1584689544/crunches_kcp2fp.jpg",
-  },
-  {
-    title: "Zumba",
-    author: "Nagaraju",
-    time: "12 minutes",
-    image: "https://res.cloudinary.com/dc0qqhiaz/image/upload/v1584689485/zumba_p1p03i.jpg",
-  },
-  {
-    title: "Martial Arts",
-    author: "Nagoor Babu",
-    time: "7 minutes",
-    image: "https://res.cloudinary.com/dc0qqhiaz/image/upload/v1584689484/martial_ovjyvf.jpg",
-  },
-]
+import exerciseData from './ExerciseData';
 
 function ExerciseWelcome() {
   return (
@@ -84,9 +49,11 @@ export function ExerciseCard(props) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">
-            Train Now
-          </Button>
+          <Link href={`/exercise?title=${props.title}&date=${props.time}&author=${props.author}&technique=${props.technique}&benefits=${props.benefits}&date=${props.date}`}>
+            <Button size="small">
+              Train Now
+            </Button>
+          </Link>
         </CardActions>
       </Card>
   )
@@ -103,7 +70,10 @@ export default function Exercise() {
             image={tile.image}
             title={tile.title}
             author={tile.author}
+            date={tile.date}
             time={tile.time}
+            technique={tile.technique}
+            benefits={tile.benefits}
           />
           </Grid>
         ))}

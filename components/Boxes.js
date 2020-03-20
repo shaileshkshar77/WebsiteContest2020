@@ -12,8 +12,8 @@ import Typography from '@material-ui/core/Typography';
 
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
-import {exerciseData, ExerciseCard} from './Exercise';
-import blueGrey from '@material-ui/core/colors/blueGrey' ;
+import {ExerciseCard} from './Exercise';
+import exerciseData from './ExerciseData';
 
 const useStyles = makeStyles({
   root: {

@@ -4,6 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import Container from '@material-ui/core/Container';
 
+import blogItems from './BlogData';
+
 const useStyles = makeStyles({
   root: {
     width: '100%',
