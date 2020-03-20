@@ -11,22 +11,35 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
 import { blogItems } from './BlogRoll';
 
+const useStyles = makeStyles({
+  date: {
+    fontSize: 14,
+  },
+  author: {
+    marginBottom: 12,
+  },
+  content: {
+    marginBottom: 24,
+  }
+});
+
 export default function LatestPost() {
   const latestPost = blogItems[0];
+  const classes = useStyles();
   return (
     <Grid container spacing={3}>
       <Grid item xs={12} sm={9} md={9}>
-        <Typography variant="h3" color="textSecondary">
-          {latestPost.date}
+        <Typography variant="button">
+          Fresh Post
         </Typography>
-        <Typography variant="h2">
+        <Typography variant="h3">
           {latestPost.title}
         </Typography>
-        <Typography variant="h4">
-          By {latestPost.author}
+        <Typography variant="h6" className={classes.author}>
+          {latestPost.author} · {latestPost.date}
         </Typography>
-        <Typography variant="h5">
-          {latestPost.content.substring(0, 150) + " ..."}
+        <Typography variant="h5" className={classes.content}>
+          {latestPost.content.substring(0, 400) + " ..."}
         </Typography>
         <Button size="small" endIcon={ <NavigateNextIcon /> }>
           Read More
