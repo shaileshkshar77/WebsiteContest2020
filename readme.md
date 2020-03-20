@@ -24,3 +24,7 @@ $ npm install
 $ npm run build
 $ npm start
 ```
+
+### experimental test flight
+
+the site is temporarily up on eat.peppe.rs
