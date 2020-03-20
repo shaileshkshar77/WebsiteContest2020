@@ -34,7 +34,7 @@ export default function Footer() {
     },
     {
       name: "Join",
-      href: ""
+      href: "form"
     },
     {
       name: "About",
