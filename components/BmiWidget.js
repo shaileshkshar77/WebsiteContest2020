@@ -80,18 +80,18 @@ export function BmiForm() {
   }
   function getBmi(bmi) {
     if(bmi < 18.5) {
-        return "You are Underweight. You may be suffering from malnutrition, or maybe an eating disorder.";
+      return "You are Underweight. You may be suffering from malnutrition, or maybe an eating disorder.";
     }
     if(bmi >= 18.5 && bmi < 24.9) {
-        return "You are Normal weight. Congratulations on being healthy!";
+      return "You are Normal weight. Congratulations on being healthy!";
     }
     if(bmi >= 25 && bmi < 29.9) {
-        return "You are Overweight. You are on the brink of being obese. Consider exercising regularly!";
+      return "You are Overweight. You are on the brink of being obese. Consider exercising regularly!";
     }
     if(bmi >= 30) {
-        return "You are morbidly Obese. Consider visiting a dietrician.";
+      return "You are morbidly Obese. Consider visiting a dietrician.";
     }
-}
+  }
 
   return (
     <React.Fragment>
@@ -140,7 +140,7 @@ export function BmiForm() {
       </Grid>
       <Grid item xs={12} sm={6}>
         <Typography variant="h3">
-          {getBmi((weight / (height * height * -2.0001)).toFixed(2))}
+          {getBmi((weight / (height * height * 0.0001)).toFixed(2))}
         </Typography>
       </Grid>
     </Grid>
